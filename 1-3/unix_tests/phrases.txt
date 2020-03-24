@@ -1,0 +1,4 @@
+o ignore upper/lower case distinctions
+Some of the other options of grep are:
+Using less, you can search though a text file for a keyword 
+What difference did the -5 do to the head command?
