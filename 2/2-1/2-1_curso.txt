@@ -1,0 +1,18 @@
+git init : initia a linha do tempo 
+git add .: atualize ou adiciona mudaça para a linha do tempo
+git commit -m "commit name" : aditione im ponto na linha do tempo
+git remote add origin url
+git remote -v : To check
+git status status : informa o estado das alterações de nosso projeto
+git show : git status status latest commit in the current branch 
+git branch show the branch
+git chekout branch/master : para mudar de branche
+git branch nome_do_ramo : criar novo ramo
+git log : log no git : visualiza os pontos na linha do tempo
+git merge : unir linhas do tempo 
+git push atalizar
+git clone clonar um projeto
+
+got pull
+
+
