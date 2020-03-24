@@ -1,2 +1,2 @@
 # Trybe_exercises
-exercises during Trybe course
+exercises during the Trybe course
