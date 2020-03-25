@@ -1,0 +1,74 @@
+          
+          body{
+            background-color: #8A897C; 
+          }  
+        
+            h1{ 
+                font-family: 'Baloo Chettan 2', serif;
+                font-size: 50px;   
+                text-align: center;                         
+            }
+            img{
+                border-radius: 50px 15px;
+                float: left;
+                margin-right: 10px;
+                background-color: azure;
+                padding: 1%;
+                margin-left: 35px;
+                            }
+            .sub-tittle{
+                font-family: 'Baloo Chettan 2', serif;
+                font-size: 25px;
+                margin-left: 35px;  
+                
+            }
+            p{
+                font-family: monospace;
+                font-size: 15px;
+            }
+            .lista {
+               
+               /* width: 300px;
+               background-color: #E2D4BA;
+               padding: 15px 30px;                            
+               border-radius: 4px;
+               margin: 10px; */
+               font-size: 15px;
+               line-height: 2;
+               font-family: monospace; 
+           }
+           li:nth-child(even) {
+            font-family: cursive; 
+        }
+        }
+            /* .rectangular {
+               
+               width: 300px; 
+               background-color: #E2D4BA;
+               padding: 15px 30px;                            
+               border-radius: 4px;
+               margin-left: 400px;
+           } */
+          
+          #description {
+              padding-left: 200px;
+          }       
+          #bloc_photo_description {
+                     
+          }
+          .button {
+            color: black;
+            background-color: azure;
+            padding: 15px 30px;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 700;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-left: 50px;
+           
+                }
+            #blog{
+            margin-bottom: 35px;
+             }   
+         
