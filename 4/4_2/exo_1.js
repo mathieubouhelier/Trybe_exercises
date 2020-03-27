@@ -1,3 +1,5 @@
+//exercicio 1
+console.log("exercicio 1")
 let arr =[];
 let n = 5;
 for (let i=0; i<n; i++){
@@ -8,6 +10,7 @@ for (let i=0; i<n; i++){
     arr =[];
 }
 //exercicio 2
+console.log("exercicio 2")
 let arr =[];
 let n = 5;
 for (let i=0; i<=n; i++){
