@@ -1,4 +1,4 @@
-let peçaDeXadrez = "Toe";
+let peçaDeXadrez = "Bispo";
 
 let nomeDaPeca = peçaDeXadrez.toLowerCase();
 
