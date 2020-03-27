@@ -1,4 +1,4 @@
-//exercicio 1
+// //exercicio 1   
 console.log("exercicio 1")
 let arr =[];
 let n = 5;
@@ -9,10 +9,10 @@ for (let i=0; i<n; i++){
     console.log(arr.join(' '));
     arr =[];
 }
-//exercicio 2
+// //exercicio 2
 console.log("exercicio 2")
-let arr =[];
-let n = 5;
+arr =[];
+n = 5;
 for (let i=0; i<=n; i++){
     for (let j = 0; j<i; j++){
         arr.push('*');
@@ -23,19 +23,23 @@ for (let i=0; i<=n; i++){
 
 //exercicio 3
 console.log("exercicio 3")
-let arr =[];
-let n = 9;
+arr =[];
+n = 9;
 for (let i=0; i<=n; i++){
     for (let j=0; j<(n-i); j++){
-        arr.push('*');
+        arr.push(' ');
     }    
+    for (let j = 0; j<i; j++){
+        arr.push('*');
+    }   
+    arr.push('*')
     console.log(arr.join(' '));
     arr =[];
 }
-//exercicio 4
+// //exercicio 4
 console.log("exercicio 4")
-let arr =[];
-let n = 4;
+arr =[];
+n = 4;
 for (let i=1; i<=n; i++){
     if (i%2 == 0){
         //console.log();
@@ -52,10 +56,10 @@ for (let i=1; i<=n; i++){
         arr =[];
     }
 }
-//excercico 5
+// //excercico 5
 console.log("exercicio 5")
-let arr =[];
-let n = 7;
+arr =[];
+n = 7;
 for (let i=0; i<((n-1)/2); i++){
     arr.push("\xa0");
 }    
@@ -80,10 +84,10 @@ for(i=0; i<n; i+=1){
     arr.push('*');
 }
 console.log(arr.join(' '));
-//excercico 6
+// //excercico 6
 console.log("exercicio 6")
 let primo = true;
-let num = 5;
+num = 5;
 console.log(num);
 for (i=2; i<num; i+=1){
     
