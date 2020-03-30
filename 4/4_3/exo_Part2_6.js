@@ -1,7 +1,10 @@
- numeroInteiro = 5;
 
+ function sum(numero){
 let sum = 0;
- for (i=1; i<=numeroInteiro; i++){
+ for (i=1; i<=numero; i++){
      sum = sum + i;
  }
- console.log(sum);
+ return sum;
+}
+
+console.log(sum(10));
