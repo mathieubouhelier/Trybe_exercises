@@ -1,10 +1,11 @@
-let arrayATestar = [2, 3, 6, 7, 10, 1];
+let arrayATestar = [2, 4, 6, 7, 10, 0, -3];
 let resultado = true;
-let valorMax = 0;
+
 function testArray (inputArray) {
     let indicMax = inputArray.length;
+    let valorMax = inputArray[0];
     for (i=0; i<indicMax; i++){
-         if (valorMax < inputArray[i]) {
+         if (valorMax > inputArray[i]) {
             valorMax = inputArray[i]
             resultado = i;
         }
