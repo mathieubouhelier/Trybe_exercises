@@ -1,4 +1,144 @@
 Parte I
+Exercises: Events
+Mad Libs
+Start with this webpage, which has several input elements and a button:
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title></title>
+ </head>
+ <body>
+ 
+ <h1>Mad Libs</h1>
+ 
+ <ul>
+  <li>Noun: <input type="text" id="noun">
+  <li>Adjective: <input type="text" id="adjective">
+  <li>Someone's Name: <input type="text" id="person">
+ </ul>
+ 
+ <button id="lib-button">Lib it!</button>
+  
+ <div id="story"></div>
+  
+ </body>
+</html>
+Add a script tag to the bottom of the page for your code.
+Add an event listener to the button so that it calls a makeMadLib function when clicked.
+In the makeMadLib function, retrieve the current values of the form input elements, make a story from them, and output that in the story div (like "Pamela really likes pink cucumbers.")
+See Solution
+function libIt() {
+  var storyDiv = document.getElementById("story");
+  var person = document.getElementById("person").value;
+  var adjective = document.getElementById("adjective").value;
+  var noun = document.getElementById("noun").value;
+  storyDiv.innerHTML = person + " married a " + adjective + " " + noun + "... So weird!";
+}
+
+var libButton = document.getElementById('lib-button');
+libButton.addEventListener('click', libIt);
+Calculator
+Start with this webpage, which has inputs and buttons for things to calculate: 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Calculator</title>
+</head>
+<body>
+
+  <label>Square this number:
+    <input type="number" id="square-input" size="2">
+  </label>
+  <button id="square-button">Calculate</button>
+  <br><br>
+  
+  <label>Half this number:
+    <input type="number" id="half-input" size="2">
+  </label>
+  <button id="half-button">Calculate</button>
+  <br><br>
+  
+  <label>
+    Fraction:
+    <input type="number" id="percent1-input" size="2">
+  </label>
+  <label>
+    Whole:
+    <input type="number" id="percent2-input" size="2">
+  </label>
+  <button id="percent-button">Calculate</button>
+  <br><br>
+  
+  <label>Calculate area of circle with radius:
+    <input type="number" id="area-input" size="2">
+  </label>
+  <button id="area-button">Calculate</button> 
+  <br><br>
+  <div id="solution"></div>
+
+  
+</body>
+</html>
+Add a script tag, and add the functions from the calculator exercise (view the solution if you haven't done it yet).
+For each operation, create an event listener for the button, and when it's clicked, find the value of the appropriate input and show the result of the calculation in the solution div.
+Bonus: respond to key presses so that the user doesn't have to click the button.
+See Solution
+function squareNumber(num) {
+    var squaredNumber = num * num;
+    console.log('The result of squaring the number ' + num + ' is ' + squaredNumber);
+    return squaredNumber;
+}
+
+function halfOf(num) {
+    var half = num / 2;
+    console.log('Half of ' + num + ' is ' +  half);
+    return half;
+}
+
+function percentOf(num1, num2) {
+    var percent = (num1/num2) * 100;
+    console.log(num1 + ' is ' + percent + '% of ' + num2);
+    return percent;
+}
+
+function areaOfCircle(radius) {
+    var area = Math.PI * squareNumber(radius);
+    console.log('The area of circle with radius ' + radius + ' is ' + area);
+    return area;
+}
+    
+var squareButton = document.getElementById("square-button");
+squareButton.addEventListener("click", function() {
+  var num = document.getElementById("square-input").value;
+  document.getElementById("solution").innerHTML = squareNumber(num);
+});
+    
+var halfButton = document.getElementById("half-button");
+halfButton.addEventListener("click", function() {
+  var num = document.getElementById("half-input").value;
+  document.getElementById("solution").innerHTML = halfOf(num);
+});
+
+var percentButton = document.getElementById("percent-button");
+percentButton.addEventListener("click", function() {
+  var num1 = document.getElementById("percent1-input").value;
+  var num2 = document.getElementById("percent2-input").value;
+  document.getElementById("solution").innerHTML = percentOf(num1, num2);
+});
+    
+
+var areaButton = document.getElementById("area-button");
+areaButton.addEventListener("click", function() {
+  var num = document.getElementById("area-input").value;
+  document.getElementById("solution").innerHTML = areaOfCircle(num);
+});
+
+
+
+
+
 No link abaixo, você vai encontrar a descrição de dois exercícios. Crie um arquivo .html para cada um e resolva-os separadamente, seguindo o modelo descrito na seção anterior.
 
 Use a sua criatividade para incrementar ainda mais a solução. 🤓
