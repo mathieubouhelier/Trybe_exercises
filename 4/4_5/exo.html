@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 4.5</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+     //Exo_1_1
+     let title = document.createElement("h1");
+     title.innerHTML = " Exercício 4.5 - JavaScript DOM";
+     document.body.lastChild(title);
+     //Exo_1_2
+     let firstdiv = document.createElement("div");
+     firstdiv.className = "main-content";
+     document.body.appendChild(firstdiv);
+     //Exo_1_3
+     let secondDiv = document.createElement("div");
+     secondDiv.className = "center-content";
+     firstdiv.appendChild(secondDiv);
+     //document.querySelector(".main-content").appendChild(secondtdiv);
+     //Exo_1_4
+     let pText = document.createElement("p");
+     pText.innerHTML= "algum texto";
+     secondDiv.appendChild(pText);
+     //Exo_1_5
+     let leftDiv = document.createElement("div");
+     leftDiv.className = "left-content";
+     firstdiv.appendChild(leftDiv);
+     //Exo_1_6
+     let rightDiv = document.createElement("div");
+     rightDiv.className = "right-content";
+     firstdiv.appendChild(rightDiv);
+     //Exo_1_7
+     let img = document.createElement("img");
+     img.className = "small-image";
+     img.src = "https://picsum.photos/200";
+     leftDiv.appendChild(img);
+     //Exo_1_8
+     let array = [
+                "Um",
+                "Dois",
+                "Três",
+                "Quatro",
+                "Cinco",
+                "Seis",
+                "Sete",
+                "Oito",
+                "Nove",
+                "Dez"
+    ];
+     let lista = document.createElement("ul");
+     rightDiv.appendChild(lista)
+     for (let i=0; i<array.length; i++){
+     let li = document.createElement('li');
+     lista.appendChild(li).innerHTML = array[i];
+      }
+    //Exo_1_9 
+    for (let i=0; i<3; i++){
+     let h3 = document.createElement("h3");
+     firstdiv.appendChild(h3);
+      }
+    //Exo_2_1
+      let h1 = document.querySelector("h1");
+      h1.className = "title";
+    //Exo_2_2
+    for (let i=0; i<3; i++){
+    let h3 = document.querySelectorAll("h3");
+    h3[i].className = "description";
+      }
+    //Exo_2_3
+     firstdiv.removeChild(leftDiv);
+    //Exo_2_4
+    rightDiv.style.marginRight = "auto";
+    //Exo_2_5
+    secondDiv.parentElement.style.background = "orange";
+    //Exo_2_6
+  //  lista.removeChild(lista.lastChild);     
+  //  lista.removeChild(lista.lastChild);  
+    //let allLi = document.getElementsByTagName("li") ;
+    lista.removeChild(allLi[9]); 
+         
+         </script>
+        
+  </body>
+</html>

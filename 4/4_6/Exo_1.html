@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title></title>
+ </head>
+ <body>
+ 
+ <h1>Mad Libs</h1>
+ 
+ <ul>
+  <li>Noun: <input type="text" id="noun">
+  <li>Adjective: <input type="text" id="adjective">
+  <li>Someone's Name: <input type="text" id="person">
+ </ul>
+ 
+ <button id="lib-button">Lib it!</button>
+  
+ <div id="story"></div>
+  <script>
+      const nounBox = document.querySelector('#noun');
+      const adjectiveBox = document.querySelector('#adjective');
+      const personBox = document.querySelector('#person');
+      let nounText;
+      let adjectiveText;
+      let personText;
+      let botao = document.querySelector("#lib-button");
+      botao.addEventListener('click',makeMadLib);
+      function makeMadLib () {
+       nounText = nounBox.value;
+       adjectiveText = adjectiveBox.value;
+       personText = personBox.value;
+    //Test
+       console.log(nounText);
+       console.log(adjectiveText);
+       console.log(personText);
+        //test end
+        let phrase = "this " + personText + " "+" is "+" "+ adjectiveText +" " +" and " + nounText  ;
+        let divStory = document.querySelector("#story");
+        divStory.innerHTML = phrase;
+ }      
+  </script>
+ </body>
+</html>
