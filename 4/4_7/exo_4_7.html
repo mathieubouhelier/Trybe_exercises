@@ -50,8 +50,8 @@
             for (let i=0; i<buttons.length; i+=1){
                 let buttonClassValue = buttons[i].className;
                 let valueStyleLocalStorage = localStorage.getItem(buttonClassValue);  
-                console.log(buttonClassValue);
-                console.log(valueStyleLocalStorage);
+                // console.log("buttonClassValue: ", buttonClassValue);
+                // console.log(valueStyleLocalStorage);
                     if (typeof buttonClassValue !== 'undefined' && buttonClassValue !== null){
                     document.body.style[buttonClassValue] = valueStyleLocalStorage;
                     }
@@ -62,8 +62,8 @@
                 buttons[i].addEventListener('click',function(event){
                     let buttonvalue = event.target.innerHTML;
                     let buttonClassValue = buttons[i].className;
-                    console.log(buttonClassValue);
-                    console.log(buttonvalue);
+                    // console.log(buttonClassValue);
+                    // console.log(buttonvalue);
                     localStorage.setItem(buttonClassValue,buttonvalue);
                     document.body.style[buttonClassValue] = buttonvalue;
                 })
