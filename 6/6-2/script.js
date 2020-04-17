@@ -8,3 +8,13 @@ for (i = 0; i < estados.length; i +=1){
 	optionElement.innerText = estados[i];
 	formElement.appendChild(optionElement);
 }
+window.addEventListener('DOMContentLoaded', function(){
+	var myDatepicker = document.querySelector('input[name="fdate"]');
+  	myDatepicker.DatePickerX.init({
+		format : 'dd/mm/yyyy'
+	});
+  
+  });
+  validation.init("form");
+
+ 
