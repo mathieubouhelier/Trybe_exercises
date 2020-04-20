@@ -16,15 +16,28 @@
   <script>
   const imgref = document.getElementsByTagName('img');
   imgref[0].style.marginLeft ='0px';
+  let moveforward = true;
   function catWalk () {
     //console.log(parseInt(imgref[0].style.marginLeft.split(),10));
-    console.log(parseInt(imgref[0].style.marginLeft));
-    imgref[0].style.marginLeft = `${parseInt(imgref[0].style.marginLeft.split(),10) + 10}px`;
-    if (parseInt(imgref[0].style.marginLeft.split(),10) > window.innerWidth-300) {
-      imgref[0].style.marginLeft ='0px';
+    //console.log(parseInt(imgref[0].style.marginLeft));
+  //  imgref[0].style.marginLeft = `${parseInt(imgref[0].style.marginLeft.split(),10) + 10}px`;
+
+    if (moveforward){
+        imgref[0].style.marginLeft = `${parseInt(imgref[0].style.marginLeft.split(),10) + 10}px`;
+    }else {
+        imgref[0].style.marginLeft = `${parseInt(imgref[0].style.marginLeft.split(),10) - 10}px`;
+    }
+        if (parseInt(imgref[0].style.marginLeft.split(),10) > window.innerWidth-300){
+            moveforward = false; 
+        }
+        if (parseInt(imgref[0].style.marginLeft.split(),10) <0) {
+            moveforward = true; 
+        }
+         console.log(moveforward);
+      //imgref[0].style.marginLeft ='0px';
     //clearInterval(catrun);
   }
-  }
+
   let buttonElement = document.querySelector('#botão');
   buttonElement.addEventListener('click', function(){
   clearInterval(catrun)
