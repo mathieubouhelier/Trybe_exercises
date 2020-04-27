@@ -1,0 +1,60 @@
+
+body {
+	font-size: 20px;
+	margin: 10px
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+h2 {
+
+}
+
+img {
+	max-width: 100%;
+	margin-top: 5%;
+}
+
+figure {
+	margin: 0;
+}
+
+@media only screen and (min-width: 800px){
+  body {
+    background-color: cadetblue;
+    font-size: 21px;
+    margin: 20;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  figure {
+    float: left;
+    margin: 10px; 
+    width: 48%;
+  }
+}
+
+@media only screen and (min-width: 1200px){
+  body {
+    background-color: darkgrey;
+    font-size: 20px;
+    margin: 40px
+   }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  p {
+    max-width: 1000px;
+  }
+
+  figure {
+
+  }
+}
