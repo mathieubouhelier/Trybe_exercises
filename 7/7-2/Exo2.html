@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercícios 7.3</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 90%;
+      height: 100px;
+      border: 1px solid red;
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+    .flex-direction__column { flex-direction: column; }
+    .justify-content__space-between { justify-content: space-between; }
+    .justify-content__center { justify-content: center; }
+    .align-items__flex-start { align-items: flex-start; }
+    .automatic-box-height { height: auto; }
+    .ball { border-radius: 100%; }
+    .green { background-color: green; }
+    .blue { background-color: blue; }
+    .red { background-color: red; }
+    .yellow { background-color: yellow; }
+    .black { background-color: black; }
+    .medium {
+      width: 50px;
+      height: 50px;
+    }
+
+#exercise-1 {
+  animation-name: go_right;
+  animation-duration: 1s;
+  animation-delay: 3s;
+}
+
+#exercise-2 {
+  animation-name: go_right;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+#exercise-3 {
+  animation-name: go_right;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-direction: alternate
+}
+
+#exercise-4:hover {
+  animation-name: go_right;
+  animation-duration: 1s;
+  animation-play-state: running;
+  animation-duration: 5s;
+}
+
+#section-5:hover > #exercise-5 {
+  animation-name: go_right;
+  animation-duration: 1s;
+  animation-play-state: running;
+  animation-duration: 5s; 
+} 
+
+.justify-content__space-between > div:nth-child(1):hover + div {
+  animation-name: go_left;
+  animation-play-state: running;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+#exercise-7 {
+  animation-name: stretch;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+#exercise-8 {
+  animation-name: change-color;
+  animation-duration: 4s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+
+}#exercise-9 {
+  animation-name: change-4-colors;
+  animation-duration: 4s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+#exercise-10 {
+  animation-name: change-4-colors-stretch;
+  animation-duration: 4s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+#exercise-11_1 {
+  animation-name: go_right;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#exercise-11_2 {
+  animation-name: go_right;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+#exercise-11_3 {
+  animation-name: go_right;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+#exercise-11_4 {
+  animation-name: go_right;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+
+#exercise-11_5 {
+  animation-name: go_right;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#exercise-12 {
+  transform: rotate(90deg);
+  margin-right: 10px;
+}
+
+#exercise-12:active {
+  animation-name: fade;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes fade {
+from {
+  opacity: 100%;
+}
+to {
+  opacity: 0%;
+}
+} 
+
+@keyframes change-4-colors-stretch {
+  0% {
+    background-color: red;
+    width: 50px;
+  }
+  25%{
+    background-color: red;
+  }
+  26% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: yellow;
+    width: 100%;
+  }
+  51% {
+    background-color: blue;
+  }
+  75%{
+     background-color: blue;
+  }
+  76% {
+    background-color: green;
+  }
+  100% {
+    background-color: green;
+    width: 50px;
+  }
+}
+
+@keyframes change-4-colors {
+  0% {
+background-color: red;
+  }
+  25%{
+    background-color: red;
+  }
+  26% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: yellow;
+  }
+  51% {
+    background-color: blue;
+  }
+  75%{
+     background-color: blue;
+  }
+  76% {
+    background-color: green;
+  }
+  100% {
+    background-color: green;
+  }
+}
+
+@keyframes stretch {
+  0% {
+    width: 50px;
+  }
+  50%{
+    width: 100%;
+  }
+  100% {
+    width: 50px;
+  }
+}
+
+@keyframes go_left {
+  0%{
+  margin-right: 0%;
+  background-color: red;
+}
+  100%{
+  margin-right: 90%;
+  background-color: red;
+}
+} 
+
+@keyframes go_right {
+from {
+  margin-left: 0%;
+}
+to {
+  margin-left: 96%;
+}
+} 
+  </style>
+</head>
+<body>
+  <ol>
+    <li>
+      <section>
+        <div id="exercise-1" class="ball green medium"></div>
+      </section>
+    </li>
+    <li>
+      <section>
+        <div id="exercise-2" class="ball green medium"></div>
+      </section>
+    </li>
+    <li>
+      <section>
+        <div id="exercise-3" class="ball green medium"></div>
+      </section>
+    </li>
+    <li>
+      <section>
+        <div id="exercise-4" class="ball green medium"></div>
+      </section>
+    </li>
+    <li>
+      <section id="section-5">
+        <div id="exercise-5" class="ball green medium"></div>
+      </section>
+    </li>
+    <li>
+      <section class="justify-content__space-between">
+        <div id="exercise-6-square" class="blue medium"></div>
+        <div id="exercise-6" class="ball green medium"></div>
+      </section>
+    </li>
+    <li>hange-4-colors" class="blue medium"></div>
+      </section>
+    </li>
+    <li>
+      <section class="justify-content__center">
+        <div id="exercise-8" class="red medium"></div>
+      </section>
+    </li>
+    <li>
+      <section class="justify-content__center">
+        <div id="exercise-9" class="red medium"></div>
+      </section>
+    </li>
+    <li>
+      <section class="justify-content__center">
+        <div id="exercise-10" class="red medium"></div>
+      </section>
+    </li>
+      <li>
+        <section class="flex-direction__column align-items__flex-start automatic-box-height">
+          <div id="exercise-11_1" class="red medium"></div>
+          <div id="exercise-11_2" class="blue medium"></div>
+          <div id="exercise-11_3" class="green medium"></div>
+          <div id="exercise-11_4" class="yellow medium"></div>
+          <div id="exercise-11_5" class="black medium"></div>
+        </section>
+      </li>
+      <li>
+        <section class="justify-content__center">
+          <!-- <div id="exercise-12" class="black medium"></div> -->
+          <img id="exercise-12"  src="blue-car.png" width=70px class="car1">
+        </section>
+      </li>
+  </ol>
+</body>
+</html>

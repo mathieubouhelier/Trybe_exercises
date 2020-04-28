@@ -142,6 +142,7 @@ O quadrado azul deve iniciar o movimento de forma lenta, depois acelerar e final
 O quadrado verde deve iniciar o movimento de forma lenta;
 O quadrado amarelo deve finalizar o movimento de forma lenta;
 O quadrado preto deve iniciar e finalizar o movimento de forma lenta;
+
 Ao ser clicado (e o click ser mantido pressionado) faça o quadrado preto desaparecer ao longo de 1 segundo. Depois de desaparecer completamente, ele não deve mais reaparecer.
 
 Bônus
