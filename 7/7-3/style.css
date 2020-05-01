@@ -3,6 +3,60 @@
     flex-direction: column;
 }
 
-img {
-  height: "200px";
+.grid {
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid img {
+  border-radius: 10px;
+  border: solid black 1px;
+}
+
+.rotation {
+  animation: rotating 200ms linear forwards;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.scale {
+  animation: scaling 2s ease-in-out forwards;
+}
+
+@keyframes scaling {
+
+  0% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.skew {
+  animation: skewing 2s ease-in-out forwards;
+}
+
+@keyframes skewing {
+
+  0% {
+    transform: skew(0deg);
+  }
+
+  100% {
+    transform: skew(360deg);
+  }
 }
