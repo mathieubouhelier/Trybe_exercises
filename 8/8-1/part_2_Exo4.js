@@ -7,7 +7,7 @@ function name(phrase, word) {
     if (array[i] == 'x') array[i] = word;
     phraseOut = phraseOut + ' ' + array[i];
   }
-    return phraseOut;
+  return phraseOut;
 }
 
 function addSkills (stringFunction) {
@@ -16,36 +16,21 @@ function addSkills (stringFunction) {
   for (i = 0; i < skills.length; i++) {
     stringFunction = stringFunction + '\n * ' + skills[i];
   }
+  stringFunction += `\n#goTrybe”.`;
   return stringFunction;
 }
 
 nameEs6 = (phrase, word) => phrase = phrase.replace('x', word);
 
-// addSkillsEs6 = (phraseToAdd) => {
-//   return  `${phraseToAdd}
-// Minhas cinco principais habilidades são:
-// ${skills.sort()}
-// #goTrybe”.`
-// }
- 
 addSkillsEs6 = (phraseToAdd) => {
-  console.log(`${phraseToAdd}
-Minhas cinco principais habilidades são:`)
-  skills.sort().forEach((x) => {
-    console.log(`* ${x}`)
-  })
-  console.log('#goTrybe')
-return out
+  let out = `${phraseToAdd} \nMinhas cinco principais habilidades são:`;
+  skills.sort().forEach((x) => {out = `${out} \n* ${x}`});
+  out += `\n#goTrybe”.`;
+  return out
 }
 
-//   return  `${phraseToAdd}
-// Minhas cinco principais habilidades são:
-// ${skills.sort().forEach((x) => {
-//   console.log(`${x}`,x)
-// })
-// }
-// #goTrybe”.`
 
 
-// console.log(addSkills(name('Tryber x aqui! Tudo bem?','Lucas')));
+console.log(addSkills(name('Tryber x aqui! Tudo bem?','Lucas')));
 console.log(addSkillsEs6(nameEs6('Tryber x aqui! Tudo bem?','Lucas')));
+
