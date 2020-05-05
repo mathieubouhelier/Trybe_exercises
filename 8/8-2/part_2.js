@@ -44,7 +44,12 @@ function listValues (objectTarget) {
 }
 console.log("Exo 4: listValues(lesson3)", listValues(lesson3));
 //Exo 5
-const allLessons = Object.assign({},{lesson1,lesson2,lesson3});
+const allLessons = {
+  lesson1:Object.assign({}, lesson1), 
+  lesson2: Object.assign({}, lesson2), 
+  lesson3: Object.assign({}, lesson3)
+  }
+// const allLessons = Object.assign({},{lesson1,lesson2,lesson3}); Você tem o mesmo resultado que:const allLessons = {lesson1, lesson2, lesson3}
 console.log("Exo 5: allLessons", allLessons);
 //Exo6
 totalEstudante = (objectTarget) => {
