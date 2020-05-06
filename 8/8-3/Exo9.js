@@ -1,6 +1,8 @@
 const assert = require('assert');
 
-const thereIs = '';
+function change(param) {
+  return !param;
+}
 
 // implemente seus testes aqui
-assert.strictEqual(typeof thereIs, 'string');
+assert.ok(true, false);
