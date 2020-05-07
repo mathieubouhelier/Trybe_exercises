@@ -1,5 +1,13 @@
-const assert = require('assert');
+const assert = require("assert");
 // escreva a função factorial para passar nos testes abaixo:
+factorial = (num) => {
+  let result = 1
+  for (let i = 1; i <= num; i += 1) {
+    result = result * i;
+  }
+  console.log(result);
+  return result; 
+};
 
 const in1 = 5;
 const exp1 = 120;
