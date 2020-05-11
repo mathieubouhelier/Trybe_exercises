@@ -1,0 +1,228 @@
+Agora a prática
+Desafio
+Se se sentir confortável, temos aqui proposto um desafio extra para a realização dos exercícios (além de conseguir fazer todos os bônus!). Ele consiste em escrever um teste e fazê-lo passar em no máximo cinco minutos. Se não conseguir, apague tudo o que fez e repita. Qual é a finalidade disso?! Não é ser ágil! É fazer testes pequenos! A ideia é treinar com firmeza a noção de que testes devem ser pequenos e numerosos, ao invés de grandes e complexos.
+
+Pense assim: a cada cinco minutos você precisa dar um git checkout . && git clean -df no seu código. Para commitar antes de isso acontecer, é preciso escrever um novo teste e fazê-lo passar. Acha que consegue?! 😏
+
+Agora digite timer no Google e mãos à obra!
+
+Praticando TDD
+Vamos dividir os exercícios em dois grupos: primeiro, você vai escrever código baseado nos testes. Depois você lerá um código e o que ele tem que trazer de resposta. A partir disso, você escreverá testes e os usará de base para alterar o código. Como assim? Bem, vamos passo a passo!
+Escrevendo código para testes:
+Dados os casos de testes abaixo, escreva as funções de forma a passar nos testes. É importante nunca alterar os testes ou as variáveis já escritas no código:
+Copiar
+const assert = require('assert');
+// escreva a função addOne para passar nos testes abaixo:
+
+//
+const myArray = [31, 57, 12, 5];
+const unchanged = [31, 57, 12, 5];
+const expected = [32, 58, 13, 6];
+const output = addOne(myArray);
+
+assert.strictEqual(typeof addOne, 'function');
+assert.deepEqual(output, expected);
+assert.deepEqual(myArray, unchanged);
+Copiar
+const assert = require('assert');
+// escreva a função wordLengths para passar nos testes abaixo:
+
+//
+const words = ['sun', 'potato', 'roundabout', 'pizza'];
+const expected = [3, 6, 10, 5];
+
+assert.strictEqual(typeof wordLengths, 'function');
+const output = wordLengths(words);
+assert.deepEqual(output, expected);
+Copiar
+const assert = require('assert');
+// escreva a função addAllnumbers para passar nos testes abaixo:
+
+//
+const numbers = [9, 23, 10, 3, 8];
+const expected = 53;
+const output = addAllnumbers(numbers);
+
+assert.strictEqual(typeof addAllnumbers, 'function');
+assert.strictEqual(output, expected);
+Copiar
+const assert = require('assert');
+// escreva a função findTheNeedle para passar nos testes abaixo:
+
+//
+let words = ['house', 'train', 'slide', 'needle', 'book'];
+let expected = 3;
+let output = findTheNeedle(words, 'needle');
+assert.strictEqual(output, expected);
+
+words = ['plant', 'shelf', 'arrow', 'bird'];
+expected = 0;
+output = findTheNeedle(words, 'plant');
+assert.strictEqual(output, expected);
+
+words = ['plant', 'shelf', 'arrow', 'bird'];
+expected = -1;
+output = findTheNeedle(words, 'plat');
+assert.strictEqual(output, expected);
+Reescrevendo funções utilizando TDD
+Agora mudamos um pouco: temos uma função pronta (e feita de forma errada, ou seja, sem funcionar direito), os parâmetros que devem ser passados a ela e a resposta esperada. Escreva testes de modo a entender e testar o comportamento da função e, depois, altere-a para que passe nos testes. Use os casos de teste acima como inspiração, se tiver dúvidas!
+Copiar
+const greetPeople = (people) => {
+  let greeting = 'Hello ';
+
+  for (const person in people) {
+    greeting += people[person];
+  }
+  return greeting;
+};
+
+const parameter = ['Irina', 'Ashleigh', 'Elsa'];
+const result = ['Hello Irina', 'Hello Ashleigh', 'Hello Elsa'];
+/*
+  Use a variável parameter como parâmetro da função acima, escreva testes
+  para verificar se a mesma está retornando a como se vê na variável result
+  e, caso não esteja, altere o código para que ele passe nos testes.
+  Lembre-se: testes pequenos e numerosos! Escreva um por vez e vá corrigindo
+  a função aos poucos:
+*/
+Copiar
+const removeVowels = (word) => {
+  const characters = word.split('');
+  const results = [];
+
+  for (let i = 0; i < characters.length; i += 1) {
+    if (
+      characters[i] === 'a' ||
+      characters[i] === 'o' ||
+      characters[i] === 'i' ||
+      characters[i] === 'e' ||
+      characters[i] === 'u'
+    ) {
+      results.push(characters[i]);
+    } else {
+      results.push('_');
+    }
+  }
+  return results;
+};
+
+
+const parameter = 'Dayane';
+const result = 'D1y2n3';
+/*
+  Use a variável parameter como parâmetro da função acima, escreva testes
+  para verificar se a mesma está retornando a como se vê na variável result
+  e, caso não esteja, altere o código para que ele passe nos testes.
+  Lembre-se: testes pequenos e numerosos! Escreva um por vez e vá corrigindo
+  a função aos poucos:
+*/
+Copiar
+const greaterThanTen = (array) => {
+  let results = 0;
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i] > 10) {
+      results += array[i];
+    }
+  }
+  return results;
+};
+
+const parameter = [4, 10, 32, 9, 21];
+const result = [32, 21];
+/*
+  Use a variável parameter como parâmetro da função acima, escreva testes
+  para verificar se a mesma está retornando a como se vê na variável result
+  e, caso não esteja, altere o código para que ele passe nos testes.
+  Lembre-se: testes pequenos e numerosos! Escreva um por vez e vá corrigindo
+  a função aos poucos:
+*/
+Copiar
+function secondThirdSmallest(array) {
+    let results = []
+    array.sort(function (x, y) {
+        return x + y;
+    });
+    results = [array[1], array[2]];
+    return results;
+};
+
+const parameter = [4, 10, 32, 9, 21, 90, 5, 11, 8, 6];
+const result = [5, 6];
+/*
+  Use a variável parameter como parâmetro da função acima, escreva testes
+  para verificar se a mesma está retornando a como se vê na variável result
+  e, caso não esteja, altere o código para que ele passe nos testes.
+  Lembre-se: testes pequenos e numerosos! Escreva um por vez e vá corrigindo
+  a função aos poucos:
+*/
+Bônus
+Separamos para o final mais alguns exercícios. Eles são mais complexos, mas não desanime!
+
+Copiar
+const assert = require('assert');
+// escreva a função factorial para passar nos testes abaixo:
+
+const in1 = 5;
+const exp1 = 120;
+
+const in2 = 9;
+const exp2 = 362880;
+
+const in3 = 1;
+const exp3 = 1;
+
+const in4 = 0;
+const exp4 = 1;
+
+const in5 = 3;
+const exp5 = 6;
+
+const out1 = factorial(in1);
+const out2 = factorial(in2);
+const out3 = factorial(in3);
+const out4 = factorial(in4);
+const out5 = factorial(in5);
+
+assert.strictEqual(out1, exp1);
+assert.strictEqual(out2, exp2);
+assert.strictEqual(out3, exp3);
+assert.strictEqual(out4, exp4);
+assert.strictEqual(out5, exp5);
+Copiar
+const assert = require('assert');
+// escreva a função removeMiddle para passar nos testes abaixo:
+
+const words = ['mouse', 'giraffe', 'queen', 'window', 'bottle'];
+const expectedWords = ['mouse', 'giraffe', 'window', 'bottle'];
+const expectedOutput = ['queen'];
+const output = removeMiddle(words);
+
+assert.deepEqual(output, expectedOutput);
+assert.deepEqual(words, expectedWords);
+Copiar
+const getLargestNumber = (array) => {
+    let largestNumber;
+    for (let i = 0; i < array.length - 1; i += 1) {
+        if (array[i] > array[i + 1]) {
+            largestNumber = [array[i]];
+        }
+    }
+    return largestNumber;
+}
+
+const parameter = [45, 8, 2, 50, 1, 7, 99];
+const result = 99;
+/*
+  Use a variável parameter como parâmetro da função acima, escreva testes
+  para verificar se a mesma está retornando a como se vê na variável result
+  e, caso não esteja, altere o código para que ele passe nos testes.
+  Lembre-se: testes pequenos e numerosos! Escreva um por vez e vá corrigindo
+  a função aos poucos:
+*/
+Kata ‘Verificador de senhas’ : Crie uma função Verify() que retorne false para os casos listados no repositório e true caso contrário. Não é necessário fazer os itens extras (2, 3 e 4) do repositório.
+Recursos adicionais (opcional)
+Katas to learn TDD
+Programming with Wolfgang - TDD Katas
+Test Driven Development (TDD): Example Walkthrough
+Test Driven Development - Wikipedia
+Apresentação da ThoughtWorks sobre TDD
