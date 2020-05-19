@@ -11,4 +11,5 @@ function myIndexOf(arr, item) {
 }
 
 // implemente seus testes aqui
-assert.equal(sum(4, 5), 9); // OK
+assert.equal(myIndexOf([1, 2, 3, 4], 3), 2);
+assert.equal(myIndexOf([1, 2, 3, 4], 5), -1);
