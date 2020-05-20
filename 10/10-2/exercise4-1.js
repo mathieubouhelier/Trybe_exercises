@@ -17,7 +17,7 @@ const greet = (temperature) => console.log(`Hi there! Curiosity here. Right now 
         const temp = getMarsTemperature();
         console.log(temp);
          callback(temp);
-    }, 5100);
+    }, messageDelay());
 };
 
 
