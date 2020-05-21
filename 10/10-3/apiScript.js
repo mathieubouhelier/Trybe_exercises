@@ -6,40 +6,33 @@ const fetchJoke = () => {
     headers: { Accept: "application/json" },
   };
 
-  const numRandom = () => Math.floor(Math.random() * 50);
-  let randomNums = [];
-  sum = 0;
-  for (let index = 0; index < 10; index++) {
-    randomNums[index] = numRandom();
-    sum = sum + randomNums[index] * randomNums[index];
-  }
+  const sum = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    .map(() => Math.floor(Math.random() * 50))
+    .reduce((acc, ind) => (acc = acc + ind * ind));
   successTest = sum < 8000;
-  // console.log("meu array", randomNums, "sum", sum, successTest);
+
+  console.log("sum", sum, "successTest", successTest);
 
   function promise1() {
     return new Promise((resolve, reject) => {
       if (successTest) {
-        // console.log("inside Succedd");
+        console.log("inside Succedd");
         resolve("Succedd");
       } else {
-        // console.log("inside fail");
+        console.log("inside fail");
         reject("É mais de oito mil! Essa promise deve estar quebrada!");
       }
     });
   }
-  const divedNumber = [2, 3, 5, 10];
   const funcExt = () => {
-    return new Promise(() => {
-      // console.log("Funcext_print test");
-      for (let index = 0; index < divedNumber.length; index++) {
-        let divedArray = [];
-        divedArray = successTest / divedNumber[index];
-        console.log(divedArray);
-      }
+    return new Promise((resolve, reject) => {
+      resolve([2, 3, 5, 10].map((number) => sum / number));
     });
   };
 
-  promise1().then(funcExt()).catch(console.log);
+  promise1()
+  .then(() => funcExt().then(console.log))
+  .catch(console.log);
 
   fetch(API_URL, myObject).then((data) => console.log("1st", data));
 
