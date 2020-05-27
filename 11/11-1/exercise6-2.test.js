@@ -32,7 +32,7 @@ const getAnimal = data => {
   return findAnimalByAge(data).then(animal => animal);
 };
 
-// ---------------------
+// --------------------
 describe('Testando promise - findAnimalByAge', () => {
   describe('Quando existe o animal com idade procurada', () => {
     test('Retorne o objeto do animal', () => {
