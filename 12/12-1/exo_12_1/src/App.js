@@ -2,13 +2,22 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const task = value => {
+  return <li>{value}</li>;
+};
+const listaDeTarefas = ['leite', 'ovos']
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        test here
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+        A comprar:
+        {listaDeTarefas.map(e => task(e))}
+        {task('manteiga')}
+        {task('Laranja')}
+
         </p>
         <a
           className="App-link"
