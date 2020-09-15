@@ -3,7 +3,7 @@ db.clientes.aggregate([
   {
     $group: {
       _id: '$endereco.uf',
-      count: { $sum: 1 },
+      total: { $sum: 1 },
     },
   },
 ]);
