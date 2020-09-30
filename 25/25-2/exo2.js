@@ -18,4 +18,7 @@ db.clientes.aggregate([
       idade: { $gt: 18, $lt: 25 },
     },
   },
+  {
+    $count: 'Total',
+  },
 ]);
